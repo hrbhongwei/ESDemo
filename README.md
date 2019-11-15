@@ -1,2 +1,0 @@
-# ESDemo
-Elasticsearch Demo
