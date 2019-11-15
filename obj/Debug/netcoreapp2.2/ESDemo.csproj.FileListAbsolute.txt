@@ -1,0 +1,17 @@
+E:\Project\Net\ELK\ESDemo\src\bin\Debug\netcoreapp2.2\appsettings.Development.json
+E:\Project\Net\ELK\ESDemo\src\bin\Debug\netcoreapp2.2\appsettings.json
+E:\Project\Net\ELK\ESDemo\src\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+E:\Project\Net\ELK\ESDemo\src\bin\Debug\netcoreapp2.2\ESDemo.deps.json
+E:\Project\Net\ELK\ESDemo\src\bin\Debug\netcoreapp2.2\ESDemo.runtimeconfig.json
+E:\Project\Net\ELK\ESDemo\src\bin\Debug\netcoreapp2.2\ESDemo.runtimeconfig.dev.json
+E:\Project\Net\ELK\ESDemo\src\bin\Debug\netcoreapp2.2\ESDemo.dll
+E:\Project\Net\ELK\ESDemo\src\obj\Debug\netcoreapp2.2\ESDemo.csprojAssemblyReference.cache
+E:\Project\Net\ELK\ESDemo\src\obj\Debug\netcoreapp2.2\ESDemo.AssemblyInfoInputs.cache
+E:\Project\Net\ELK\ESDemo\src\obj\Debug\netcoreapp2.2\ESDemo.AssemblyInfo.cs
+E:\Project\Net\ELK\ESDemo\src\obj\Debug\netcoreapp2.2\ESDemo.RazorAssemblyInfo.cache
+E:\Project\Net\ELK\ESDemo\src\obj\Debug\netcoreapp2.2\ESDemo.RazorAssemblyInfo.cs
+E:\Project\Net\ELK\ESDemo\src\bin\Debug\netcoreapp2.2\ESDemo.pdb
+E:\Project\Net\ELK\ESDemo\src\bin\Debug\netcoreapp2.2\ESDemo.xml
+E:\Project\Net\ELK\ESDemo\src\obj\Debug\netcoreapp2.2\ESDemo.RazorTargetAssemblyInfo.cache
+E:\Project\Net\ELK\ESDemo\src\obj\Debug\netcoreapp2.2\ESDemo.dll
+E:\Project\Net\ELK\ESDemo\src\obj\Debug\netcoreapp2.2\ESDemo.pdb

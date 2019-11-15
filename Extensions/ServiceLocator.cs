@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ESDemo.Extensions
+namespace ESDemo.Controllers
 {
     public class ServiceLocator
     {

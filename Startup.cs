@@ -2,15 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ESDemo.Extensions;
+using ESDemo.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.PlatformAbstractions;
 using Nest;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -36,6 +37,12 @@ namespace ESDemo
             //services.AddControllers();
 
             //注册Swagger生成器，定义一个和多个Swagger 文档
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddSingleton(new ApiTokenConfig("A3FFB16D-D2C0-4F25-BACE-1B9E5AB614A6"));
+
+            services.AddScoped<IApiTokenService, ApiTokenService>();
+
             services.AddSwaggerGen(c =>
             {
                 typeof(ApiVersions).GetEnumNames().ToList().ForEach(version =>
@@ -48,7 +55,7 @@ namespace ESDemo
                         TermsOfService = "None"
                     });
                 });
-                var basePath = Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.ApplicationBasePath;
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
                 var xmlPath = System.IO.Path.Combine(basePath, $"{_Project_Name}.xml");
                 c.IncludeXmlComments(xmlPath);
                 //添加自定义参数，可通过一些特性标记去判断是否添加
@@ -61,25 +68,22 @@ namespace ESDemo
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
+            if (env.IsDevelopment())
             {
-                //ApiVersions为自定义的版本枚举
-                typeof(ApiVersions)
-                .GetEnumNames()
-                .OrderByDescending(e => e)
-                .ToList()
-                .ForEach(version =>
+                app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
                 {
-            //版本控制
-            c.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{_Project_Name} {version}");
+                    typeof(ApiVersions).GetEnumNames().OrderByDescending(e => e).ToList().ForEach(version =>
+                    {
+                        c.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{_Project_Name} {version}");
+                    });
+                    //注入汉化文件
+                    c.InjectJavascript($"/swagger_translator.js");
                 });
-                //注入汉化脚本
-                c.InjectOnCompleteJavaScript($"/swagger_translator.js");
-            });
-            //通过ServiceLocator.Resolve<Service接口>()获取注入的服务
+            }
             ServiceLocator.Configure(app.ApplicationServices);
             app.UseStaticFiles();
             app.UseMvc();

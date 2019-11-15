@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ESDemo.Extensions
+namespace ESDemo.Controllers
 {
     /// <summary>
     /// 添加控制器模块说明

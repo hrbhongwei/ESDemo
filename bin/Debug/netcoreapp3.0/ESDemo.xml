@@ -4,5 +4,118 @@
         <name>ESDemo</name>
     </assembly>
     <members>
+        <member name="T:ESDemo.Extensions.IApiTokenService">
+            <summary>
+            api接口服务
+            </summary>
+        </member>
+        <member name="M:ESDemo.Extensions.IApiTokenService.ConvertLoginToken(System.Int32,System.String)">
+            <summary>
+            转换成token
+            </summary>
+            <param name="userId"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ESDemo.Extensions.IApiTokenService.GetUserPayloadByToken">
+            <summary>
+            根据token解密信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ESDemo.Extensions.UserApiTokenPayload">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ESDemo.Extensions.UserApiTokenPayload.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ESDemo.Extensions.UserApiTokenPayload.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ESDemo.Extensions.ApiTokenConfig">
+            <summary>
+            apiToken_唯一key
+            </summary>
+        </member>
+        <member name="M:ESDemo.Extensions.ApiTokenConfig.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="P:ESDemo.Extensions.ApiTokenConfig.Api_Token_Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ESDemo.Extensions.ApiTokenService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ESDemo.Extensions.ApiTokenService.#ctor(ESDemo.Extensions.ApiTokenConfig,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <param name="httpContextAccessor"></param>
+        </member>
+        <member name="M:ESDemo.Extensions.ApiTokenService.ConvertLoginToken(System.Int32,System.String)">
+            <summary>
+            换取登录token 
+            </summary>
+            <param name="userId"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ESDemo.Extensions.ApiTokenService.GetUserPayloadByToken">
+            <summary>
+            获取登录信息 
+            </summary>
+            <remarks>
+            获取header或者参数携带的x-token参数
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="T:ESDemo.Extensions.ApplyTagDescriptions">
+            <summary>
+            添加控制器模块说明
+            </summary>
+        </member>
+        <member name="M:ESDemo.Extensions.ApplyTagDescriptions.Apply(Swashbuckle.AspNetCore.Swagger.SwaggerDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            apply
+            </summary>
+            <param name="swaggerDoc"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:ESDemo.Extensions.AssignOperationVendorExtensions">
+            <summary>
+            操作过过滤器 添加通用参数等
+            </summary>
+        </member>
+        <member name="M:ESDemo.Extensions.AssignOperationVendorExtensions.Apply(Swashbuckle.AspNetCore.Swagger.Operation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            apply
+            </summary>
+            <param name="operation"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:ESDemo.Extensions.SwaggerFileUploadAttribute">
+            <summary>
+            文件上传
+            </summary>
+        </member>
+        <member name="T:ESDemo.Extensions.UserAuthorizeAttribute">
+            <summary>
+            会员登录验证
+            </summary>
+        </member>
     </members>
 </doc>

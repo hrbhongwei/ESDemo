@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESDemo</name>
+    </assembly>
+    <members>
+        <member name="T:ESDemo.Controllers.AccountController">
+            <summary>
+            登录接口
+            </summary>
+        </member>
+        <member name="M:ESDemo.Controllers.AccountController.Login(System.String,System.String)">
+            <summary>
+            登录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ESDemo.Controllers.UserCenterController">
+            <summary>
+            用户中心接口
+            </summary>
+        </member>
+        <member name="M:ESDemo.Controllers.UserCenterController.Info">
+            <summary>
+            获取用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ESDemo.Controllers.UserCenterController.UpdateInfo">
+            <summary>
+            修改用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ESDemo.Controllers.UserCenterController.UploadAvster">
+            <summary>
+            生成头像
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ESDemo.Controllers.IApiTokenService">
+            <summary>
+            api接口服务
+            </summary>
+        </member>
+        <member name="M:ESDemo.Controllers.IApiTokenService.ConvertLoginToken(System.Int32,System.String)">
+            <summary>
+            转换成token
+            </summary>
+            <param name="userId"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ESDemo.Controllers.IApiTokenService.GetUserPayloadByToken">
+            <summary>
+            根据token解密信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ESDemo.Controllers.UserApiTokenPayload">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ESDemo.Controllers.UserApiTokenPayload.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ESDemo.Controllers.UserApiTokenPayload.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ESDemo.Controllers.ApiTokenConfig">
+            <summary>
+            apiToken_唯一key
+            </summary>
+        </member>
+        <member name="M:ESDemo.Controllers.ApiTokenConfig.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="P:ESDemo.Controllers.ApiTokenConfig.Api_Token_Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ESDemo.Controllers.ApiTokenService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ESDemo.Controllers.ApiTokenService.#ctor(ESDemo.Controllers.ApiTokenConfig,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <param name="httpContextAccessor"></param>
+        </member>
+        <member name="M:ESDemo.Controllers.ApiTokenService.ConvertLoginToken(System.Int32,System.String)">
+            <summary>
+            换取登录token 
+            </summary>
+            <param name="userId"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ESDemo.Controllers.ApiTokenService.GetUserPayloadByToken">
+            <summary>
+            获取登录信息 
+            </summary>
+            <remarks>
+            获取header或者参数携带的x-token参数
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="T:ESDemo.Controllers.BaseApiController">
+            <summary>
+            基础类
+            </summary>
+        </member>
+        <member name="T:ESDemo.Controllers.CustomRouteAttribute">
+            <summary>
+            自定义路由 /api/{version=v1}/[controler]/[action]
+            </summary>
+        </member>
+        <member name="M:ESDemo.Controllers.CustomRouteAttribute.#ctor(System.String)">
+            <summary>
+            自定义路由构造函数
+            </summary>
+            <param name="actionName"></param>
+        </member>
+        <member name="M:ESDemo.Controllers.CustomRouteAttribute.#ctor(ESDemo.Controllers.ApiVersions,System.String)">
+            <summary>
+            自定义路由构造函数
+            </summary>
+            <param name="actionName"></param>
+            <param name="version"></param>
+        </member>
+        <member name="P:ESDemo.Controllers.CustomRouteAttribute.GroupName">
+            <summary>
+            分组名称
+            </summary>
+        </member>
+        <member name="T:ESDemo.Controllers.ApiVersions">
+            <summary>
+            Api接口版本 每次新版本增加一个
+            </summary>
+        </member>
+        <member name="T:ESDemo.Controllers.ApplyTagDescriptions">
+            <summary>
+            添加控制器模块说明
+            </summary>
+        </member>
+        <member name="M:ESDemo.Controllers.ApplyTagDescriptions.Apply(Swashbuckle.AspNetCore.Swagger.SwaggerDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            apply
+            </summary>
+            <param name="swaggerDoc"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:ESDemo.Controllers.AssignOperationVendorExtensions">
+            <summary>
+            操作过过滤器 添加通用参数等
+            </summary>
+        </member>
+        <member name="M:ESDemo.Controllers.AssignOperationVendorExtensions.Apply(Swashbuckle.AspNetCore.Swagger.Operation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            apply
+            </summary>
+            <param name="operation"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:ESDemo.Controllers.SwaggerFileUploadAttribute">
+            <summary>
+            文件上传
+            </summary>
+        </member>
+        <member name="T:ESDemo.Controllers.UserAuthorizeAttribute">
+            <summary>
+            会员登录验证
+            </summary>
+        </member>
+    </members>
+</doc>
